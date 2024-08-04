@@ -2,4 +2,4 @@
 Population Genetics analysis of Primula palinuri
 
 
-![image](https://github.com/user-attachments/assets/46d6fe17-74ff-433b-84ef-e57e96579de1)
+![image](https://github.com/user-attachments/assets/a5e99519-668e-47d0-b4f1-325530f4c284)
