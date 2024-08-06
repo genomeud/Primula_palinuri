@@ -10,14 +10,14 @@ suppressPackageStartupMessages({
   library(optparse)
 })
 
-# Required input files are missing fileterd vcf and population file. Last option "to_do" needs to be filled with (pca_analysis,ibd_analysis,FST) depending on the analysis to perform
+
 option_list = list(
   make_option(c("-p", "--spp"), type="character",
   default="primula_palinuri",help="spp name [default= %default]", metavar="character"),
   make_option(c("-I", "--infile"), type="character",
   default="NULL",help="stacks vcf file [default= %default]", metavar="character"),
   make_option(c("-O", "--outpath"), type="character",
-  default="/projects/marroni/seedforce/primula_palinuri/github/tests/",help="Output directory [default= %default]", metavar="character")
+  default=NULL,help="Output directory [default= %default]", metavar="character")
 )
 
 opt_parser = OptionParser(option_list=option_list);
