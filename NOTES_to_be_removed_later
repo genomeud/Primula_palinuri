@@ -1,0 +1,4 @@
+Missing functions:
+treemix --> not sure if we are going to include this analyses
+optM --> to estimate optimal number of migration events in treemix (depends on treemix)
+Biplot --> final plot needs to be improved
