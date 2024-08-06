@@ -7,17 +7,17 @@
 suppressPackageStartupMessages(library("optparse"))
 
 option_list = list(
-  make_option(c("-i", "--indir"), action="store", default="/projects/marroni/seedforce/primula_palinuri/github/tests/admixture/input/", type='character', 
+  make_option(c("-i", "--indir"), action="store", default=NULL, type='character', 
               dest="indir", help="Input directory where file are located  [%default]"),
-  make_option(c("-o", "--outdir"), action="store", default="/projects/marroni/seedforce/primula_palinuri/github/tests/admixture/output/", type='character', 
+  make_option(c("-o", "--outdir"), action="store", default="/admixture/output/", type='character', 
               dest="outdir", help="Output directory where file are stored  [%default]"),
   make_option(c("-p", "--prefix"), action="store", default="populations.snps.filtered.recode_MIS_filt_PLINK_sorted", type='character', 
               dest="file.prefix", help="File name prefix  [%default]"),
-  make_option(c("--infile"), action="store", default=NULL, type='character', 
+  make_option(c("--infile"), action="store", default="populations.snps.filtered.recode_MIS_filt_evanno.txt", type='character', 
               dest="infile", help="Cross-validation summary file path  [%default]"),
   make_option(c("-k", "--k_value"), action="store", default="3.Q", type='character',
               dest="k_value",help="K value [%default]"),
-  make_option(c("-P", "--popfile"), action="store", default="/projects/marroni/seedforce/primula_palinuri/raw_reads/sample_ID_and_populations.txt", type="character",
+  make_option(c("-P", "--popfile"), action="store", default="/raw_reads/sample_ID_and_populations.txt", type="character",
                 help="Population file path [default= %default]"), 
   make_option(c("--step"), action="store",dest="to_do",default="draw_admixture", type='character', help="Step of the pipeline (draw_admixture,draw_cross-validation) [%default]")
 			 )
