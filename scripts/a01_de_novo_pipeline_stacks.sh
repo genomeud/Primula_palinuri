@@ -132,6 +132,12 @@ Rscript ${FUNC_DIR}/a07_count_het_SNPs_per_ind.r \
 -O ${out2}/genotype_counts.tbl \
 -P ${out2}/ratio_heterozygosity.jpeg
 
+# Create phylogenetic trees
+Rscript ${FUNC_DIR}/a08_phyl_tree_plot.r \
+-V ${out2}/populations.snps.filtered.recode_MIS_filt_header.vcf \
+-M ${raw_files}/sample_ID_and_populations.txt \
+-O ${out2}/phyl_tree_NJ
+
 
 
 # "test" directory to verify that everything works properly

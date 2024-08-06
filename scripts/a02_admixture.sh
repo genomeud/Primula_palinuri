@@ -94,7 +94,7 @@ cat <(echo -e "K\tCV_profile") - > ${INPUT_DIR}/admixture/output/populations.snp
 
 
 # 4. Draw CV plot - from the summary table. Check the cross validation output to choose the correct number of K where the cv error reach the "lowest" value. This step is subject to interpretation
-Rscript ${FUNC_DIR}/a08_admixture.r \
+Rscript ${FUNC_DIR}/a09_admixture.r \
 -o ${INPUT_DIR}/admixture/output/ \
 --prefix populations.snps.filtered.recode_MIS_filt \
 --infile ${INPUT_DIR}/admixture/output/populations.snps.filtered.recode_MIS_filt_evanno.txt \
@@ -104,7 +104,7 @@ Rscript ${FUNC_DIR}/a08_admixture.r \
 # set optimal number of clusters according to the results obtained with cross validation (k=optimal number of clusters=
 k=3
 
-Rscript ${FUNC_DIR}/a08_admixture.r \
+Rscript ${FUNC_DIR}/a09_admixture.r \
 -i ${INPUT_DIR}/admixture/input/ \
 -o ${INPUT_DIR}/admixture/output/ \
 --prefix populations.snps.filtered.recode_MIS_filt_PLINK_sorted \
