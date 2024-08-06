@@ -1,5 +1,5 @@
 # Copyright:	    Paloma Perez & Fabio Marroni 2024
-# Aim:              mean expected and observed heterozygosity according to stacks
+# Aim:             Boxplot with expected and observed heterozygosity + histogram with mean expected and observed heterozygosity according to stacks
 # To add:		     
 # Suggestions: 
 # Fixes:  
