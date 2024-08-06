@@ -41,7 +41,7 @@ if (is.null(opt$outplot)) {
   }
 
 library(vcfR)
-# browser()
+
 # Read vcf file
 invcf <- vcffile
 vcf <- read.vcfR(invcf)
