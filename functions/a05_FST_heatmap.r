@@ -15,7 +15,7 @@ option_list = list(
   make_option(c("-p", "--spp"), type="character",
   default="primula_palinuri",help="spp name [default= %default]", metavar="character"),
   make_option(c("-I", "--infile"), type="character",
-  default="NULL",help="stacks vcf file [default= %default]", metavar="character"),
+  default=NULL,help="stacks vcf file [default= %default]", metavar="character"),
   make_option(c("-O", "--outpath"), type="character",
   default=NULL,help="Output directory [default= %default]", metavar="character")
 )
