@@ -4,8 +4,6 @@
 # Suggestions: 
 # Fixes:  
 
-
-
 # Run with --help or -h flag for help.
 # Written 04/07/2020 by Fabio Marroni
 suppressPackageStartupMessages({
@@ -17,17 +15,17 @@ option_list = list(
   make_option(c("-p", "--spp"), type="character",
   default="primula_palinuri",help="spp name [default= %default]", metavar="character"),
   make_option(c("-V", "--vcffile"), type="character",
-  default="/projects/marroni/seedforce/primula_palinuri/github/tests/populations.snps.filtered.recode_MIS_filt.vcf",help="stacks vcf file [default= %default]", metavar="character"),
+  default="populations.snps.filtered.recode_MIS_filt.vcf",help="stacks vcf file [default= %default]", metavar="character"),
   make_option(c("-R", "--to_remove"), type="character",
   default="NULL",help="samples separated by comma to remove from the analysis [default= %default]", metavar="character"),
   make_option(c("-P", "--popfile"), type="character",
-  default="/projects/marroni/seedforce/primula_palinuri/raw_reads/sample_ID_and_populations.txt",help="Population file path [default= %default]", metavar="character"),
+  default="/raw_reads/sample_ID_and_populations.txt",help="Population file path [default= %default]", metavar="character"),
   make_option(c("-G", "--gdsfile"), type="character",
-  default="/projects/marroni/seedforce/primula_palinuri/github/tests/SNPRelate/primula_palinuri.cov5.info50.gds",help="SNPRelate gds file [default= %default]", metavar="character"),
+  default="/SNPRelate/primula_palinuri.cov5.info50.gds",help="SNPRelate gds file [default= %default]", metavar="character"),
   make_option(c("-O", "--outpath"), type="character",
-  default="/projects/marroni/seedforce/primula_palinuri/github/tests/SNPRelate/",help="Output directory [default= %default]", metavar="character"),
+  default="/SNPRelate/",help="Output directory [default= %default]", metavar="character"),
   make_option(c("-W", "--within"), type="character",
-  default="/projects/marroni/seedforce/primula_palinuri/github/tests/SNPRelate/IBD_within.pdf",help="Within population IBD graph file [default= %default]", metavar="character"), 
+  default="/SNPRelate/IBD_within.pdf",help="Within population IBD graph file [default= %default]", metavar="character"), 
   make_option(c("-M", "--maf"), type="numeric",
   default=0.05,help="Minimum MAF to include a SNP in analysis [default= %default]", metavar="character"), 
   make_option(c("-S", "--missingness"), type="numeric",
@@ -35,7 +33,7 @@ option_list = list(
   make_option(c("-L", "--LD"), type="numeric",
   default=0.2,help="Threshold for LD pruning [default= %default]", metavar="character"), 
   make_option(c("-I", "--ibdmatfile"), type="character",
-  default="/projects/marroni/seedforce/primula_palinuri/github/tests/SNPRelate/primula_palinuri.cov5.info50.ibd", help="IBD matrix output file [default= %default]", metavar="character"),
+  default="/SNPRelate/primula_palinuri.cov5.info50.ibd", help="IBD matrix output file [default= %default]", metavar="character"),
   make_option(c("-s","--step"), action="store",dest="to_do",default="pca_analysis", type='character', help="Step of the pipeline (pca_analysis,ibd_analysis) [%default]")
 )
 
