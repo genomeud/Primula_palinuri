@@ -11,13 +11,13 @@ suppressPackageStartupMessages({
 
 option_list = list(
 # put the path and tblfile with allele info
-  make_option(c("-F", "--tblfile"), type="character", default="/projects/marroni/seedforce/primula_palinuri/github/tests/allele_info_primula_palinuri_MinAll.tbl", 
+  make_option(c("-F", "--tblfile"), type="character", default="allele_info_primula_palinuri_MinAll.tbl", 
               help="path input tblfile with minor allele previously generated [default= %default]", metavar="character"),
 # put path and name for the output tblfile
-  make_option(c("-O", "--outfile"), type="character", default="/projects/marroni/seedforce/primula_palinuri/github/tests/allele_freq_and_exp_het.tbl", 
+  make_option(c("-O", "--outfile"), type="character", default="allele_freq_and_exp_het.tbl", 
               help="output tblfile name [default= %default]", metavar="character"),   
 # put path and name for the output histogram in jpeg format
-  make_option(c("-P", "--outplot"), type="character", default="/projects/marroni/seedforce/primula_palinuri/github/tests/histogram_MAF.jpeg", 
+  make_option(c("-P", "--outplot"), type="character", default="histogram_MAF.jpeg", 
               help="output plot name in jpeg format [default= %default]", metavar="character")              
               
 )
@@ -73,7 +73,6 @@ opt = parse_args(opt_parser);
 HWE<-function(tblfile,outfile,outplot)
 {
 
-# browser()
 allele <- tblfile
 
 tbl = read.table(allele, header=F)
