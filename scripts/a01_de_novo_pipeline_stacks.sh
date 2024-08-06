@@ -116,7 +116,7 @@ done
 # prepare input table
 awk -F'\t' -v OFS='\t' '{ for (i = 1; i <= NF; ++i) sub(/^$/, 0, $i) } 1' ${out2}/populations.fst_summary.tsv | cat - <(echo -e "LAM\t0\t0\t0\t0\t0\t0\t0") > ${out2}/populations.fst_summary_for_heatmap.tsv
 
-# heatmap
+# FST heatmap
 Rscript ${FUNC_DIR}/a05_FST_heatmap.r \
 -p ${spp} \
 -I ${out2}/populations.fst_summary_for_heatmap.tsv \
