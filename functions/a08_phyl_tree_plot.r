@@ -43,8 +43,7 @@ if (is.null(opt$outdir)) {
 library(vcfR)
 library(ape)
 
-browser()
-
+# create output directory
 dir.create(outdir,showWarnings=F,recursive=TRUE)
 
 vcf <- read.vcfR(vcffile)
