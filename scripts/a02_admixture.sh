@@ -1,4 +1,4 @@
-# Copyright:	    Gabriele Magris & Fabio Marroni & Paloma 2024
+# Copyright:	    Gabriele Magris & Fabio Marroni & Paloma Perez 2024
 # Aim:              Perform admixture analysis + draw plot 
 # To add:		     
 # Suggestions: 
