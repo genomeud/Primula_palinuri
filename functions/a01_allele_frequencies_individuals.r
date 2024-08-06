@@ -1,5 +1,5 @@
 # Copyright:	    Fabio Marroni & Paloma Perez 2024
-# Aim:              Count how many times we have 
+# Aim:            Allele frequency from vcf file 
 # To add:		     
 # Suggestions: 
 # Fixes:  
