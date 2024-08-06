@@ -1,5 +1,5 @@
 # Copyright:	    Paloma Perez & Fabio Marroni 2024
-# Aim:            Count heterozygous SNPs, informative SNPs and calculate ratio for each individual present in the vcf file. Do a scatterplot HE_SNPs/informative SNPs vs informative SNPs/ total SNPs
+# Aim:              Count heterozygous SNPs, informative SNPs and calculate ratio for each individual present in the vcf file. Do a scatterplot HE_SNPs/informative SNPs vs informative SNPs/ total SNPs
 # To add:		     
 # Suggestions: 
 # Fixes: 
