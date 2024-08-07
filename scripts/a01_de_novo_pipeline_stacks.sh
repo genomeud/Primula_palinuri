@@ -90,6 +90,7 @@ do
     -p ${spp} \
     -V ${out2}/populations.snps.filtered.recode_MIS_filt.vcf \
     -P ${raw_files}/sample_ID_and_populations.txt \
+    -O ${out2}/SNPRelate \
     -s ${step} &> ${out2}/${step}.log
 done
 
@@ -137,3 +138,28 @@ Rscript ${FUNC_DIR}/a08_phyl_tree_plot.r \
 -V ${out2}/populations.snps.filtered.recode_MIS_filt_header.vcf \
 -M ${raw_files}/sample_ID_and_populations.txt \
 -O ${out2}/phyl_tree_NJ
+
+# prepare files for procrustes analysis
+# prepare genetic coordinates (using the PCA generated with SNPrealate)
+# We will also need geographic coordinates
+cut -f1-3 ${out2}/SNPRelate/PCA.all_snp.${spp}.txt | sed 's/sample\.id/ID/g' > ${out2}/genetic_coordinates.txt
+# We will also need geographic coordinates (name of the file = coordinates_individuals.txt) as the following example:
+# ID     Latitude   Longitude
+# ID1    40.032339  15.272951
+# ID2    40.032329  15.272896
+# ID3    40.032261  15.272726
+# ID4    40.032179  15.272605
+
+
+Rscript ${FUNC_DIR}/a10_proclustes.r \
+-C ${out2}/coordinates_individuals.txt \
+-G ${out2}/genetic_coordinates.txt \
+-M ${raw_files}/sample_ID_and_populations.txt
+
+# "test" directory to verify that everything works properly
+spp=primula_palinuri
+INPUT_DIR=/projects/marroni/seedforce/primula_palinuri
+FUNC_DIR=/projects/marroni/seedforce/primula_palinuri/github/functions
+out1=/projects/marroni/seedforce/primula_palinuri/github/tests
+out2=/projects/marroni/seedforce/primula_palinuri/github/tests
+raw_files=${INPUT_DIR}/raw_reads

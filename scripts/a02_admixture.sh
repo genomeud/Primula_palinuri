@@ -1,4 +1,4 @@
-# Copyright:	    Gabriele Magris & Fabio Marroni & Paloma Perez 2024
+# Copyright:	    Gabriele Magris & Fabio Marroni & Paloma 2024
 # Aim:              Perform admixture analysis + draw plot 
 # To add:		     
 # Suggestions: 
@@ -111,3 +111,16 @@ Rscript ${FUNC_DIR}/a09_admixture.r \
 -k ${k}.Q \
 -P ${raw_files}/sample_ID_and_populations.txt \
 --step draw_admixture
+
+
+
+# # test folder
+# spp=primula_palinuri
+# # INPUT_DIR=/projects/marroni/seedforce/primula_palinuri
+# FUNC_DIR=/projects/marroni/seedforce/primula_palinuri/github/functions
+# INPUT_DIR=/projects/marroni/seedforce/primula_palinuri/github/tests
+# INPUT_DIR=/projects/marroni/seedforce/primula_palinuri/github/tests
+# raw_files=/projects/marroni/seedforce/primula_palinuri/raw_reads
+# mkdir -p ${INPUT_DIR}/admixture/input
+# cd ${INPUT_DIR}/admixture
+
