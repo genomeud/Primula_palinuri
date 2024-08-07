@@ -144,7 +144,7 @@ dev.off()
 # boxplot with heterozygosity distribution for each population #
 ################################################################
 
-
+library(ggplot2)
 color_list=c("steelblue","orchid2","seagreen","gray68","tomato2","lightgoldenrod","hotpink4")
 fileOut=("boxplot_he_ratio.jpeg")
 jpeg(fileOut,width=8,height=8,units="cm",res=300, type="cairo")
