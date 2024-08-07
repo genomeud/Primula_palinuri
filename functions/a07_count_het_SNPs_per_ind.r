@@ -157,7 +157,7 @@ ggplot(result, aes(x=Population, y=Heterozygous_Ratio, fill=Population)) +
     theme(text = element_text(size = 6)) +
     xlab("Populations") +
     ylab("Heterozygous positions / Informative positions") +
-    ggtitle("Heterozygous Ratio") +
+    ggtitle("Heterozygosity Ratio") +
     theme(plot.title = element_text(hjust = 0.5)) +
     theme(text = element_text(size=8),
     axis.text.x = element_text(angle=90, hjust=1),
