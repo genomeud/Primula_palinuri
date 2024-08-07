@@ -1,5 +1,5 @@
 # Copyright:	    Paloma Perez & Fabio Marroni 2024
-# Aim:              count heterozygous SNPs, informative SNPs and calculate ratio for each individual present in the vcf file. Do a scatterplot HE_SNPs/informative SNPs vs informative SNPs/ total SNPs
+# Aim:              count heterozygous SNPs, informative SNPs and calculate ratio for each individual present in the vcf file. Do a scatterplot HE_SNPs/informative SNPs vs informative SNPs/ total SNPs and boxplot with heterozygosity per population
 # To add:		     
 # Suggestions: 
 # Fixes: 
@@ -139,3 +139,28 @@ text(x=-1.11,y=-0.33,labels=bquote(R^2==~.(rsquare)),cex=0.5)
 text(x=-1.11,y=-0.35,labels=bquote(p==~.(pvalue)),cex=0.5)
 dev.off()
 
+
+################################################################
+# boxplot with heterozygosity distribution for each population #
+################################################################
+
+
+color_list=c("steelblue","orchid2","seagreen","gray68","tomato2","lightgoldenrod","hotpink4")
+fileOut=("boxplot_he_ratio.jpeg")
+jpeg(fileOut,width=8,height=8,units="cm",res=300, type="cairo")
+par(cex.axis = 0.8, cex.lab = 1)
+par(cex.main = 1.1)
+par(mar = c(5, 6, 6, 4),oma=c(1.5,0.3,0.3,0.1), mgp=c(1.6,0.8,0))
+ggplot(result, aes(x=Population, y=Heterozygous_Ratio, fill=Population)) + 
+    geom_boxplot(outlier.shape = NA) +
+    ylim(0, 0.3) +
+    theme(text = element_text(size = 6)) +
+    xlab("Populations") +
+    ylab("Heterozygous positions / Informative positions") +
+    ggtitle("Heterozygous Ratio") +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    theme(text = element_text(size=8),
+    axis.text.x = element_text(angle=90, hjust=1),
+    panel.background = element_blank(), axis.line = element_line(colour = "black"), legend.position = "none") +
+    scale_fill_manual(values = color_list)
+dev.off()
