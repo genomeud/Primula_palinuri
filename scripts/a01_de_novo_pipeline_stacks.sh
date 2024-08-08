@@ -114,7 +114,6 @@ awk -F'\t' -v OFS='\t' '{ for (i = 1; i <= NF; ++i) sub(/^$/, 0, $i) } 1' ${out2
 
 # FST heatmap
 Rscript ${FUNC_DIR}/a05_FST_heatmap.r \
--p ${spp} \
 -I ${out2}/populations.fst_summary_for_heatmap.tsv \
 -O ${out2}/ &> ${out2}/FST.log
 
