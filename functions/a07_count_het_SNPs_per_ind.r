@@ -164,3 +164,46 @@ ggplot(result, aes(x=Population, y=Heterozygous_Ratio, fill=Population)) +
     panel.background = element_blank(), axis.line = element_line(colour = "black"), legend.position = "none") +
     scale_fill_manual(values = color_list)
 dev.off()
+
+# Boxplot including wilcoxon test. This boxplot include letters depending on the distribution observed. Same letters means similar distribution according to wilcoxon test
+library(dplyr)
+library(multcompView)
+
+full <- result[,c(6,2)]
+
+tri.to.squ<-function(x)
+{
+rn<-row.names(x)
+cn<-colnames(x)
+an<-unique(c(cn,rn))
+myval<-x[!is.na(x)]
+mymat<-matrix(1,nrow=length(an),ncol=length(an),dimnames=list(an,an))
+for(ext in 1:length(cn))
+{
+ for(int in 1:length(rn))
+ {
+ if(is.na(x[row.names(x)==rn[int],colnames(x)==cn[ext]])) next
+ mymat[row.names(mymat)==rn[int],colnames(mymat)==cn[ext]]<-x[row.names(x)==rn[int],colnames(x)==cn[ext]]
+ mymat[row.names(mymat)==cn[ext],colnames(mymat)==rn[int]]<-x[row.names(x)==rn[int],colnames(x)==cn[ext]]
+ }
+}
+return(mymat)
+}
+
+library(dplyr)
+
+pp<-pairwise.wilcox.test(full[,1], full[,2], p.adjust.method = "none", paired = FALSE)
+mymat<-tri.to.squ(pp$p.value)
+myletters<-multcompLetters(mymat,compare="<=",threshold=0.05,Letters=letters)
+
+fileOut=("boxplot_he_ratio_wilcx.jpeg")
+jpeg(fileOut,width=16,height=16,units="cm",res=300, type="cairo")
+par(cex.axis = 0.9, cex.lab = 1.1)
+par(cex.main = 1.4)
+par(mar = c(5, 6, 4, 4),oma=c(1.5,0.3,0.3,0.1), mgp=c(2.2,0.8,0))
+color_list=c("steelblue","orchid2","seagreen","gray68","tomato2","lightgoldenrod","hotpink4")
+
+boxplot(full[,1] ~ full[,2],ylab="Heterozygous positions / Informative positions",xlab="Population",col=color_list,names=c("LAM","FIU","ID","PC","SGP","CIM","PPA"),main=c("Heterozygosity Ratio"),ylim=c(min(full[,1]),0.1+max(full[,1])))
+text(c(1,2,3,4,5,6,7,8),0.1+max(full[,1]),c(myletters$Letters[1],myletters$Letters[2],myletters$Letters[3],myletters$Letters[4],myletters$Letters[5],myletters$Letters[6],myletters$Letters[7],myletters$Letters[8]))
+dev.off()
+
