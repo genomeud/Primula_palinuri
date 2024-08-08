@@ -78,11 +78,6 @@ Rscript ${FUNC_DIR}/a03_divide_populations_and_HWE_analysis.r \
 -F ${out2}/histogram_MAF_pops_ALL.pdf &> ${out2}/divide_populations_and_HWE.log &
 
 
-# plots comparing heterozygosity between populations. Manually and heterozygosity obtained with stacks
-cd ${out2}
-Rscript ${FUNC_DIR}/a06_plots.r 
-
-
 # perform PCA analysis and IBD with SNPRelate
 for step in pca_analysis ibd_analysis 
 do
