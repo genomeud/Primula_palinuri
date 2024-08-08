@@ -11,10 +11,10 @@ suppressPackageStartupMessages({
 
 option_list = list(
 # here include the sample IDs to be analysed within the vcf
-  make_option(c("-S", "--samples"), type="character", default="NULL", 
+  make_option(c("-S", "--samples"), type="character", default=NULL, 
               help="Comma separated list of samples to keep for analysis [default= %default]", metavar="character"),
 # put the path and file with vcf for individuals approach
-  make_option(c("-V", "--vcffile"), type="character", default="NULL", 
+  make_option(c("-V", "--vcffile"), type="character", default=NULL, 
               help="path to vcf input file [default= %default]", metavar="character"),
 # put path and name for the output file
   make_option(c("-O", "--outfile"), type="character", default="allele_frequency.tbl", 
