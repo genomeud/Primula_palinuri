@@ -1,5 +1,5 @@
 # Copyright:	    Fabio Marroni & Paloma Perez 2024
-# Aim:              Count how many times we have 
+# Aim:              Create table with allele frequencies 
 # To add:		     
 # Suggestions: 
 # Fixes:  
