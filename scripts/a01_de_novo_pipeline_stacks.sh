@@ -85,7 +85,7 @@ do
     -p ${spp} \
     -V ${out2}/populations.snps.filtered.recode_MIS_filt.vcf \
     -P ${raw_files}/sample_ID_and_populations.txt \
-    -O ${out2}/SNPRelate \
+    -O ${out2}/SNPRelate/ \
     -s ${step} &> ${out2}/${step}.log
 done
 
