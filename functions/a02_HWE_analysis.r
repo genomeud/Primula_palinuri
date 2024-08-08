@@ -11,7 +11,7 @@ suppressPackageStartupMessages({
 
 option_list = list(
 # put the path and tblfile with allele info
-  make_option(c("-F", "--tblfile"), type="character", default="allele_info_primula_palinuri_MinAll.tbl", 
+  make_option(c("-F", "--tblfile"), type="character", default="allele_info_MinAll.tbl", 
               help="path input tblfile with minor allele previously generated [default= %default]", metavar="character"),
 # put path and name for the output tblfile
   make_option(c("-O", "--outfile"), type="character", default="allele_freq_and_exp_het.tbl", 
