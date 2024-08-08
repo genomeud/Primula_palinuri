@@ -18,7 +18,7 @@ option_list = list(
   make_option(c("-V", "--vcffile"), type="character",
   default="populations.snps.filtered.recode_MIS_filt.vcf",help="stacks vcf file [default= %default]", metavar="character"),
   make_option(c("-R", "--to_remove"), type="character",
-  default="NULL",help="samples separated by comma to remove from the analysis [default= %default]", metavar="character"),
+  default=NULL,help="samples separated by comma to remove from the analysis [default= %default]", metavar="character"),
   make_option(c("-P", "--popfile"), type="character",
   default="raw_reads/sample_ID_and_populations.txt",help="Population file path [default= %default]", metavar="character"),
   make_option(c("-G", "--gdsfile"), type="character",
