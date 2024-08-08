@@ -11,7 +11,7 @@ suppressPackageStartupMessages({
 
 option_list = list(
 # here include the sample files to be analysed within the vcf
-  make_option(c("-S", "--samples"), type="character", default="NULL", 
+  make_option(c("-S", "--samples"), type="character", default=NULL, 
               help="Comma separated list of samples to keep for analysis [default= %default]", metavar="character"),
 # put the path and file with vcf filtered my missing data
   make_option(c("-V", "--vcffile"), type="character", default="populations.snps.filtered.recode_MIS_filt.vcf", 
