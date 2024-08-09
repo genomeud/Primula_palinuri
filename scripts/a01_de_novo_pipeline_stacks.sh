@@ -13,6 +13,8 @@ out1=${INPUT_DIR}/${spp}/de_novo_pipeline
 out2=${INPUT_DIR}/${spp}/de_novo_pipeline/populations_stacks
 # folder containing fastq sequences
 raw_files=${INPUT_DIR}/${spp}/raw_reads
+# Folder containing the functions
+FUNC_DIR=functions
 
 # Required population file inside raw_files folder 
 # population_names.txt example:
