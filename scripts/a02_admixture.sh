@@ -8,7 +8,8 @@ spp=primula_palinuri
 raw_files=${spp}/raw_reads
 
 INPUT_DIR=${spp}/de_novo_pipeline/populations_stacks
-FUNC_DIR=${spp}/github/functions
+# Folder containing the functions
+FUNC_DIR=functions
 mkdir -p ${INPUT_DIR}/admixture/input
 cd ${INPUT_DIR}/admixture
 
