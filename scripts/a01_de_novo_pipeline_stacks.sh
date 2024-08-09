@@ -119,7 +119,8 @@ Rscript ${FUNC_DIR}/a05_FST_heatmap.r \
 
 # plots
 # boxplot with expected and observed heterozygosity and histograms with mean exp and obs heterozygosity
-Rscript ${FUNC_DIR}/a06_plots_heterozygosity.r 
+Rscript ${FUNC_DIR}/a06_plots_heterozygosity.r \
+-I ${out2}/populations.sumstats.tsv
 
 # Count heterozygous SNPs + scatterplot
 Rscript ${FUNC_DIR}/a07_count_het_SNPs_per_ind.r \
