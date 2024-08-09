@@ -135,8 +135,8 @@ Rscript ${FUNC_DIR}/a08_phyl_tree_plot.r \
 
 # prepare files for procrustes analysis
 # prepare genetic coordinates (using the PCA generated with SNPrealate)
-# We will also need geographic coordinates
 cut -f1-3 ${out2}/SNPRelate/PCA.all_snp.${spp}.txt | sed 's/sample\.id/ID/g' > ${out2}/genetic_coordinates.txt
+
 # We will also need geographic coordinates (name of the file = coordinates_individuals.txt) as the following example:
 # ID     Latitude   Longitude
 # ID1    40.032339  15.272951
