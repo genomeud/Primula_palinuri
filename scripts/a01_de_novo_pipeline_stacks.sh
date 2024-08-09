@@ -125,8 +125,7 @@ Rscript ${FUNC_DIR}/a06_plots_heterozygosity.r \
 # Count heterozygous SNPs + scatterplot
 Rscript ${FUNC_DIR}/a07_count_het_SNPs_per_ind.r \
 -V ${out2}/populations.snps.filtered.recode_MIS_filt_header.vcf \
--O ${out2}/genotype_counts.tbl \
--P ${out2}/ratio_heterozygosity.jpeg
+-O ${out2}/genotype_counts.tbl
 
 # Create phylogenetic trees
 Rscript ${FUNC_DIR}/a08_phyl_tree_plot.r \
