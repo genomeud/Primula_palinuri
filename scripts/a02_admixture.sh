@@ -12,8 +12,8 @@ FUNC_DIR=${spp}/github/functions
 mkdir -p ${INPUT_DIR}/admixture/input
 cd ${INPUT_DIR}/admixture
 
-PLINK_path=/projects/novabreed/share/software/plink_linux_x86_64
-ADMIXTURE_path=/projects/novabreed/share/gmagris/software/admixture_linux-1.23
+PLINK_path=/software/plink_linux_x86_64
+ADMIXTURE_path=/software/admixture_linux-1.23
 
 # ----------------- #
 # Create input file #
@@ -111,16 +111,3 @@ Rscript ${FUNC_DIR}/a09_admixture.r \
 -k ${k}.Q \
 -P ${raw_files}/sample_ID_and_populations.txt \
 --step draw_admixture
-
-
-
-# # test folder
-# spp=primula_palinuri
-# # INPUT_DIR=/projects/marroni/seedforce/primula_palinuri
-# FUNC_DIR=/projects/marroni/seedforce/primula_palinuri/github/functions
-# INPUT_DIR=/projects/marroni/seedforce/primula_palinuri/github/tests
-# INPUT_DIR=/projects/marroni/seedforce/primula_palinuri/github/tests
-# raw_files=/projects/marroni/seedforce/primula_palinuri/raw_reads
-# mkdir -p ${INPUT_DIR}/admixture/input
-# cd ${INPUT_DIR}/admixture
-
