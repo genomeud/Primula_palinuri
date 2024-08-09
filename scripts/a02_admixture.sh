@@ -30,7 +30,7 @@ ${PLINK_path}/plink --bfile ${INPUT_DIR}/admixture/input/populations.snps.filter
 
 # sort the ped file in order to have the data separately for each population 
 # assign to each individual the population name, sort the individuals and run admixture <- first column can be replaced with the family ID 
-awk 'FNR==NR{a[$1]=$2;next}{ print a[$1],$0}' /projects/marroni/seedforce/${spp}/raw_reads/population_names.txt ${INPUT_DIR}/admixture/input/populations.snps.filtered.recode_MIS_filt_PLINK.ped | \
+awk 'FNR==NR{a[$1]=$2;next}{ print a[$1],$0}' <(sed 1d /projects/marroni/seedforce/${spp}/raw_reads/sample_ID_and_populations.txt) ${INPUT_DIR}/admixture/input/populations.snps.filtered.recode_MIS_filt_PLINK.ped | \
 # remove second column
 cut -f 2 --complement -d " " | \
 # sort the dataframe by population name 
