@@ -122,7 +122,7 @@ z <- lm(result$He_ratio ~ result$snp_ratio)
 rsquare<-round(summary(z)$adj.r.squared,3)
 # calculate p-value
 pvalue<-cor.test(result$He_ratio,result$snp_ratio)$p.value
-fileOut=("scatterplot_ratio_heterozygosity.jpeg")
+outplot=("scatterplot_ratio_heterozygosity.jpeg")
 jpeg(outplot,width=10,height=10,units="cm",res=300,type="cairo")
 par(cex.axis = 0.7, cex.lab = 0.7)
 par(cex.main = 1)
