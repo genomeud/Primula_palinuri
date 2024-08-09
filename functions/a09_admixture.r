@@ -96,8 +96,8 @@ admixture.plot.no_low_cov.cov5.info50<-function(indir,outdir,file.prefix, k_valu
     cex.text=0.5
     jpeg(outfile,width=16.9,height=8,units="cm",res=res, type="cairo")
     par(mar=c(1.2,2.5,1.4,0), mgp=c(1.6,0.5,0))
-    # similar colors used for other analyses, but depending on the number of K, it will use more or less colors from the list
-    color<-c("seagreen","tomato2","hotpink4","steelblue","lightgoldenrod","grey","orange","cyan3","tan4")
+    # similar colors used for other analyses, but depending on the number of K, it will use more or less colors from the list. For K>12 its neccessary to include more colors!
+    color<-c("seagreen","tomato2","hotpink4","steelblue","lightgoldenrod","grey","orange","cyan3","tan4","turquoise","orchid2","lightyellow1")
 
     coord<-barplot(t(as.matrix(tbl_ord)), col=color, main=titolo, ylab="Ancestry", border=NA, cex.axis=0.8, cex.main=0.9, las=2, cex.lab=1, cex.names=0.9, space=0.25,tck=-0.02,font.lab=2)
     segments(line_pos, -0.1, x1 = line_pos, y1 = 1, lwd=1.3, xpd=NA)
