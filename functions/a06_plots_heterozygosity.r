@@ -4,14 +4,33 @@
 # Suggestions: 
 # Fixes:  
 
-library(dplyr)
+# Run with --help or -h flag for help.
+
+suppressPackageStartupMessages({
+  library(optparse)
+})
+
+option_list = list(
+  make_option(c("-I", "--input"), type="character",
+  default="populations.sumstats.tsv",help="input file 'populations.sumstats.tsv' generated with populations comamand from stacks [default= %default]", metavar="character")
+)
+
+opt_parser = OptionParser(option_list=option_list);
+opt = parse_args(opt_parser);
+
+if (is.null(opt$input)) {
+  stop("WARNING: No populations.sumstats.tsv file specified with '-I' flag.")
+} else {  cat ("input file ", opt$input, "\n")
+  input <- opt$input  
+  }
+
 
 
 ######################################
 # heterozygosity according to stacks #
 ######################################
-
-tbl <- read.table("populations.sumstats.tsv", header=F)
+library(dplyr)
+tbl <- read.table(input, header=F)
 colnames(tbl)=c("Locus_ID","Chr","BP","Col","Pop_ID","P_Nuc","Q_Nuc","N","P","Obs_Het","Obs_Hom","Exp_Het","Exp_Hom","Pi","Smoothed_Pi","Smoothed_Pi_P-value","Fis","Smoothed_Fis","Smoothed_Fis_P-value","HWE_P-value","Private")
 # exp heterozygosity
 full <- as.data.frame(tbl[,c(12,5)])
