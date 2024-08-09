@@ -14,9 +14,7 @@ option_list = list(
   make_option(c("-V", "--vcffile"), type="character",
   default="populations.snps.filtered.recode_MIS_filt_header.vcf",help="vcf file including the header [default= %default]", metavar="character"),
   make_option(c("-O", "--outfile"), type="character",
-  default="genotype_counts.tbl",help="Output directory [default= %default]", metavar="character"),
-  make_option(c("-P", "--outplot"), type="character",
-  default="ratio_heterozygosity.jpeg",help="Output directory [default= %default]", metavar="character")
+  default="genotype_counts.tbl",help="Output directory [default= %default]", metavar="character")
 )
 
 opt_parser = OptionParser(option_list=option_list);
@@ -34,11 +32,6 @@ if (is.null(opt$outfile)) {
   outfile <- opt$outfile  
   }
 
-if (is.null(opt$outplot)) {
-  stop("WARNING: No outplot specified with '-O' flag.")
-} else {  cat ("outplot ", opt$outplot, "\n")
-  outplot <- opt$outplot  
-  }
 
 library(vcfR)
 
@@ -129,6 +122,7 @@ z <- lm(result$He_ratio ~ result$snp_ratio)
 rsquare<-round(summary(z)$adj.r.squared,3)
 # calculate p-value
 pvalue<-cor.test(result$He_ratio,result$snp_ratio)$p.value
+fileOut=("scatterplot_ratio_heterozygosity.jpeg")
 jpeg(outplot,width=10,height=10,units="cm",res=300,type="cairo")
 par(cex.axis = 0.7, cex.lab = 0.7)
 par(cex.main = 1)
