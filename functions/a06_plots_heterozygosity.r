@@ -28,7 +28,7 @@ color_list <- c("CIM" = "steelblue","FIU" = "orchid2","ID" = "seagreen", "LAM" =
 # par(mfrow=c(2,1))
 
 # output in jpeg format
-fileOut=("boxplot_het_categories_populations_stacks_sumstats.jpeg")
+fileOut=("boxplot_he_categories_populations_stacks_sumstats.jpeg")
 jpeg(fileOut,width=16,height=15,units="cm",res=300, type="cairo")
 par(cex.axis = 0.8, cex.lab = 1)
 par(cex.main = 1.1)
@@ -89,7 +89,7 @@ full <- as.data.frame(tbl[,c(10,5)])
 full <- na.omit(full)
 colnames(full)=c('OBS_HET', 'NAME')
 # output in jpeg format
-fileOut=("boxplot_obs_categories_populations_stacks_sumstats.jpeg")
+fileOut=("boxplot_ho_categories_populations_stacks_sumstats.jpeg")
 jpeg(fileOut,width=16,height=15,units="cm",res=300, type="cairo")
 par(cex.axis = 0.8, cex.lab = 1)
 par(cex.main = 1.1)
