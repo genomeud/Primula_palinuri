@@ -195,9 +195,9 @@ jpeg(fileOut,width=16,height=16,units="cm",res=300, type="cairo")
 par(cex.axis = 0.9, cex.lab = 1.1)
 par(cex.main = 1.4)
 par(mar = c(5, 6, 4, 4),oma=c(1.5,0.3,0.3,0.1), mgp=c(2.2,0.8,0))
-color_list=c("steelblue","orchid2","seagreen","gray68","tomato2","lightgoldenrod","hotpink4")
+color_list <- c("CIM" = "steelblue","FIU" = "orchid2","ID" = "seagreen","LAM" = "gray68","PC" = "tomato2", "PPA" = "lightgoldenrod","SGP" = "hotpink4")
 
-boxplot(full[,1] ~ full[,2],ylab="Heterozygous positions / Informative positions",xlab="Population",col=color_list,names=c("LAM","FIU","ID","PC","SGP","CIM","PPA"),main=c("Heterozygosity Ratio"),ylim=c(min(full[,1]),0.1+max(full[,1])))
+boxplot(full[,1] ~ full[,2],ylab="Heterozygous positions / Informative positions",xlab="Population",col=color_list,main=c("Heterozygosity Ratio"),ylim=c(min(full[,1]),0.1+max(full[,1])))
 text(c(1,2,3,4,5,6,7,8),0.1+max(full[,1]),c(myletters$Letters[1],myletters$Letters[2],myletters$Letters[3],myletters$Letters[4],myletters$Letters[5],myletters$Letters[6],myletters$Letters[7],myletters$Letters[8]))
 dev.off()
 
