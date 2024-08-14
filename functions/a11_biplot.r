@@ -47,9 +47,6 @@ if (is.null(opt$outpath)) {
 # Biplot #
 ##########
 
-# https://rpubs.com/Cristina_Gil/PCA
-
-
 library(data.table)
 
 infile=allelefreqtbl
@@ -129,12 +126,6 @@ biplot(ori.pca,
        ylab='PC2'
        )    
 dev.off()
-
-# library(factoextra)
-
-# pdf("test.pdf")
-# fviz_pca_biplot(ori.pca)  
-# dev.off()
 
 ###############
 # top 40 SNPs #
@@ -292,9 +283,9 @@ top.rotation <- cbind(SNP_ID = rownames(top.rotation), top.rotation)
 output_file <- file.path(outpath, "top_80SNPs.tbl")
 write.table(top.rotation,output_file,quote=F,row.names=F,col.names=T,sep="\t") 
 
-###############
+################
 # top 100 SNPs #
-###############
+################
 top.ori.one<-sort(abs(ori.pca$rotation[,1]),decreasing=T)[1:50]
 top.ori.two<-sort(abs(ori.pca$rotation[,2]),decreasing=T)[1:50]
 sel.snp<-unique(c(names(top.ori.one),names(top.ori.two)))
