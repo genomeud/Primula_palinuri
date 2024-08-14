@@ -17,9 +17,8 @@ FUNC_DIR=functions
 # create output folder
 mkdir -p ${out2}/biplot
 # Desired input --> each column represents a SNP, and each raw represents a single individual
-grep  -v "##" ${out2}/populations.snps.filtered.recode_MIS_filt.vcf | \
 # transform the allele info into 0,1 and 2 code. 0 = REF/REF; 1 = ALT/REF or REF/ALT; 2 = ALT/ALT
-awk 'OFS="\t" { for (i=10; i<=NF; i++) { if ($i ~ /0\/0/) $i = 0 ; if ($i ~ /1\/0/) $i = 1 ; if ($i ~ /0\/1/) $i = 1; if ($i ~ /1\/1/) $i = 2; if ($i ~ /.\/./) $i = "NA"} } 1' | \
+awk 'OFS="\t" { for (i=10; i<=NF; i++) { if ($i ~ /0\/0/) $i = 0 ; if ($i ~ /1\/0/) $i = 1 ; if ($i ~ /0\/1/) $i = 1; if ($i ~ /1\/1/) $i = 2; if ($i ~ /.\/./) $i = "NA"} } 1' ${out2}/populations.snps.filtered.recode_MIS_filt.vcf | \
 # transpose columns in raws
 awk 'OFS="\t" {print $1"_"$2,$0}' | \
 cut -f 2,3,4,5,6,7,8,9,10 --complement | \
