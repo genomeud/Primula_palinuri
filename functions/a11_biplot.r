@@ -1,5 +1,5 @@
 # Copyright:	    Paloma Perez & Fabio Marroni 2024
-# Aim:              Biplot analysis with all SNPs and top 40,60,80 and 100 SNPs  responsible for differentiating populations. Extract Individual genotypes of the top SNPs with the most extreme coordinates on the rotated system
+# Aim:              Biplot analysis with all SNPs and top 40,50,60,80 and 100 SNPs  responsible for differentiating populations. Extract Individual genotypes of the top SNPs with the most extreme coordinates on the rotated system
 # To add:		     
 # Suggestions: 
 # Fixes: 
