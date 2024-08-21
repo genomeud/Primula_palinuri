@@ -66,7 +66,7 @@ newfst=tri.to.squ(fst)
 # plot heatmap
 library(RColorBrewer)
 library(gplots)
-fileOut<-(outpath,"heatmap_Fst_pops_stacks.jpeg")
+fileOut<-file.path(outpath,"heatmap_Fst_pops_stacks.jpeg")
 jpeg(fileOut,width=16,height=15,units="cm",res=300, type="cairo")
 par(cex.axis = 0.8, cex.lab = 1)
 par(cex.main = 1.1)
