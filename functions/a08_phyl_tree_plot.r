@@ -61,7 +61,7 @@ colnames(metadata)<-NULL
 colnames(metadata)<-c("sample_id","group")
 
 # put pop names in alphabetic order! Use same colors that were previously defined for other analyses (PCA, IBD, HWE...)
-group_colors <- c("LAM" = "gray68","FIU" = "orchid2","ID" = "seagreen","PC" = "tomato2","SGP" = "hotpink4","CIM" = "steelblue", "PPA" = "lightgoldenrod")
+group_colors <- c("CIM" = "steelblue","FIU" = "orchid2","ID" = "seagreen","LAM" = "gray68","PC" = "tomato2", "PPA" = "lightgoldenrod","SGP" = "hotpink4")
 
 out_root=file.path(outdir,"phylogenetic_tree_with_legend_rooted.pdf")
 pdf(out_root, width=4.5, height=7)
@@ -72,7 +72,7 @@ legend("bottomright", legend=names(group_colors), fill=group_colors, cex=0.7, bo
 dev.off()
 
 out_unroot=file.path(outdir,"phylogenetic_tree_with_legend_unrooted.pdf")
-pdf(out_unroot, width=7, height=7)
+pdf(out_unroot, width=6.5, height=7)
 
 plot.phylo(tree, tip.color=tip_colors, type = "unrooted", cex=0.5, label.offset=0.05, main="Phylogenetic Tree")
 legend("bottomright", legend=names(group_colors), fill=group_colors, cex=0.7, border=FALSE, bty="n")
