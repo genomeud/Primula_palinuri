@@ -152,10 +152,15 @@ Rscript ${FUNC_DIR}/a10_proclustes.r \
 -G ${out2}/genetic_coordinates.txt \
 -M ${raw_files}/sample_ID_and_populations.txt
 
-# "test" directory to verify that everything works properly
-spp=primula_palinuri
-INPUT_DIR=/projects/marroni/seedforce/primula_palinuri
-FUNC_DIR=/projects/marroni/seedforce/primula_palinuri/github/functions
-out1=/projects/marroni/seedforce/primula_palinuri/github/tests
-out2=/projects/marroni/seedforce/primula_palinuri/github/tests
-raw_files=${INPUT_DIR}/raw_reads
+# mantel test between genetic distances (measured by fst) and geographic coordinates
+# geographic coords for each population as follows:
+# Latitude   Longitude    population
+# 40.032339  15.272951    POP1
+# 40.032329  15.272896    POP2
+# 40.032261  15.272726    POP3
+# 40.032179  15.272605    POP4
+
+Rscript ${FUNC_DIR}/a12_populations_mantel_test.r \
+-F ${out2}/populations.fst_summary_for_heatmap.tsv \
+-G ${out2}/pop_geographic_coordinates.txt \
+-O ${out2}/
