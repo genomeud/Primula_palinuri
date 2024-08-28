@@ -164,3 +164,15 @@ Rscript ${FUNC_DIR}/a12_populations_mantel_test.r \
 -F ${out2}/populations.fst_summary_for_heatmap.tsv \
 -G ${out2}/pop_geographic_coordinates.txt \
 -O ${out2}/
+
+# count SNP distribution and transition/transversion from SNPs identified
+awk 'BEGIN {OFS="\t"} !/^#/ {changes[$4"/"$5]++} END {for (c in changes) print c, changes[c]}' ${out2}/populations.snps.filtered.recode_MIS_filt_header.vcf | \
+awk 'OFS="\t" {if($1=="C/T" || $1=="T/C" ||$1=="A/G" ||$1=="G/A")print $0,"transition"; else print $0,"transversion"}' | sort -k3,3 > ${out2}/SNP_type.txt
+cat <(echo -e "type\tSNPs") <(awk 'OFS="\t" {if($NF=="transition") print $0}' ${out2}/SNP_type.txt | cut -f3 --complement) <(awk 'OFS="\t" {if($NF=="transition") print $0}' ${out2}/SNP_type.txt | awk '{ sum+=$2} END {print "transitions",sum}') \
+<(awk 'OFS="\t" {if($NF=="transversion") print $0}' ${out2}/SNP_type.txt | cut -f3 --complement) \
+<(awk 'OFS="\t" {if($NF=="transversion") print $0}' ${out2}/SNP_type.txt | awk '{ sum+=$2} END {print "transversions",sum}') > ${out2}/SNP_type_final.txt
+
+# histogram with transition/transposition
+Rscript ${FUNC_DIR}/a13_histogram_transition_transversion.r \
+-I ${out2}/SNP_type_final.txt \
+-O ${out2}/
