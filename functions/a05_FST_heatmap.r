@@ -10,7 +10,6 @@ suppressPackageStartupMessages({
   library(optparse)
 })
 
-# Required input files are missing fileterd vcf and population file. Last option "to_do" needs to be filled with (pca_analysis,ibd_analysis,FST) depending on the analysis to perform
 option_list = list(
   make_option(c("-I", "--infile"), type="character",
   default="NULL",help="stacks vcf file [default= %default]", metavar="character"),
