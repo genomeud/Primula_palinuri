@@ -64,7 +64,7 @@ geo_dist_matrix <- distm(coords[, c("Longitude", "Latitude")], fun = distHaversi
 rownames(geo_dist_matrix) <- coords$population
 colnames(geo_dist_matrix) <- coords$population
 
-mantel_test <- mantel(fst_matrix, geo_dist_matrix)
+mantel_test <- vegan::mantel(fst_matrix, geo_dist_matrix, permutations=9999)
 print(mantel_test)
 
 # scatterplot
