@@ -79,12 +79,10 @@ valid_points <- geographic_dist != 0 & genetic_dist != 0
 fileOut=file.path(outpath,"scatterplot_FST_geographic_populations.jpeg")
 jpeg(fileOut,width=16,height=15,units="cm",res=300, type="cairo")
 par(cex.axis = 0.8, cex.lab = 1)
-par(cex.main = 1.1)
 par(mar = c(5, 6, 4, 4),oma=c(1.5,0.3,0.3,0.1), mgp=c(1.7,0.8,0))
 plot(geographic_dist[valid_points], genetic_dist[valid_points],
      xlab = "Geographic Distance",
      ylab = "Genetic Distance (FST)",
-     main = "Genetic Distance vs Geographic Distance",
      pch = 19, col = "blue")
 
 # Add a regression line
