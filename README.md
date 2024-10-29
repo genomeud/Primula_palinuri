@@ -1,6 +1,7 @@
 # Primula_palinuri
 Population Genetics analysis of Primula palinuri
-[Supplementary_Figure_S1_workflow.pdf](https://github.com/user-attachments/files/17560519/Supplementary_Figure_S1_workflow.pdf)
+![Supplementary_Figure_S1_workflow-1](https://github.com/user-attachments/assets/8850b591-4dde-4202-91cf-4c6dfa102738)
+
 
 
 
