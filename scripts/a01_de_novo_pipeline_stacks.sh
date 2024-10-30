@@ -1,5 +1,5 @@
 # Copyright:	    Paloma Perez & Fabio Marroni 2024
-# Aim:              De novo pipeline for building loci from ddRAD paired end experiments using STACKS + filtering of genotyping data to ensure high quality + genetic analyses including MAF, mean expected and observed heterozygosity, FST, IBD, PCA
+# Aim:              De novo pipeline for building loci from ddRAD paired end experiments using STACKS + filtering of genotyping data to ensure high quality + genetic analyses including MAF, mean expected and observed heterozygosity, FST, kinship, IBD, PCA, mantel test using the different functions
 # To add:		     
 # Suggestions: 
 # Fixes:  
